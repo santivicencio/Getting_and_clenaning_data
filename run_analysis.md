@@ -48,7 +48,7 @@ cmd <- paste(paste0("\"", executable, "\""), parameters, paste0("\"", file.path(
 system(cmd)
 ```
 
-The archive put the files in a folder named `UCI HAR Dataset`. Set this folder as the input path. List the files here.
+The archive put the files in a folder named `UCI HAR Dataset`. We will set this folder as the input path. 
 
 ```{r}
 pathIn <- file.path(path, "UCI HAR Dataset")
@@ -69,7 +69,7 @@ dtActivityTrain <- fread(file.path(pathIn, "train", "Y_train.txt"))
 dtActivityTest  <- fread(file.path(pathIn, "test" , "Y_test.txt" ))
 ```
 
-Read the data files. `fread` seems to be giving me some trouble reading files. Using a helper function, read the file with `read.table` instead, then convert the resulting data frame to a data table. Return the data table.
+Return the data table.
 
 ```{r fileToDataTable}
 fileToDataTable <- function (f) {
@@ -80,10 +80,8 @@ dtTrain <- fileToDataTable(file.path(pathIn, "train", "X_train.txt"))
 dtTest  <- fileToDataTable(file.path(pathIn, "test" , "X_test.txt" ))
 ```
 
-
 Merge the training and the test sets
 ------------------------------------
-
 Concatenate the data tables.
 
 ```{r}
@@ -149,10 +147,8 @@ dtActivityNames <- fread(file.path(pathIn, "activity_labels.txt"))
 setnames(dtActivityNames, names(dtActivityNames), c("activityNum", "activityName"))
 ```
 
-
 ##Label with descriptive activity names
 -----------------------------------------------------------------
-
 Merge activity labels.
 
 ```{r}
