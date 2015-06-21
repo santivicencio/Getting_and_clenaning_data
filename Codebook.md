@@ -1,6 +1,6 @@
 Codebook
 ========
-Codebook was generated on 2014-04-17 09:04:47 during the same process that generated the dataset. See `run_analysis.md` or `run_analysis.html` for details on dataset creation.
+Codebook was generated during the same process that generated the dataset requiered for the project. See `run_analysis.md` for details on dataset creation.
 
 Variable list and descriptions
 ------------------------------
@@ -47,8 +47,7 @@ str(dtTidy)
 
 List the key variables in the data table
 ----------------------------------------
-
-
+Describes the source of the data that is analyzed.
 ```r
 key(dtTidy)
 ```
@@ -59,11 +58,9 @@ key(dtTidy)
 ## [7] "featMagnitude"    "featVariable"     "featAxis"
 ```
 
-
 Show a few rows of the dataset
 ------------------------------
-
-
+Code used for shows part of the structure of the data table
 ```r
 dtTidy
 ```
@@ -98,8 +95,7 @@ dtTidy
 
 Summary of variables
 --------------------
-
-
+Summarizes the information of the dataset
 ```r
 summary(dtTidy)
 ```
@@ -131,7 +127,6 @@ summary(dtTidy)
 
 List all possible combinations of features
 ------------------------------------------
-
 
 ```r
 dtTidy[, .N, by = c(names(dtTidy)[grep("^feat", names(dtTidy))])]
