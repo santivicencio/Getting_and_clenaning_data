@@ -109,7 +109,7 @@ setkey(dt, subject, activityNum)
 Extract only the mean and standard deviation
 --------------------------------------------
 
-Read the `features.txt` file. This tells which variables in `dt` are measurements for the mean and standard deviation.
+This code tells which variables in `dt` are measurements for the mean and standard deviation.
 
 ```{r}
 dtFeatures <- fread(file.path(pathIn, "features.txt"))
@@ -140,7 +140,7 @@ dt <- dt[, select, with=FALSE]
 ##Use descriptive activity names
 ------------------------------
 
-Read `activity_labels.txt` file. This will be used to add descriptive names to the activities.
+This code will be used to add descriptive names to the activities.
 
 ```{r}
 dtActivityNames <- fread(file.path(pathIn, "activity_labels.txt"))
